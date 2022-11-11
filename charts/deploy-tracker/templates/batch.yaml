@@ -1,0 +1,120 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  namespace: {{.Values.namespace}}
+  generateName: {{.Values.app.name}}-gh-status-in-progress-
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  template:
+    metadata:
+      labels:
+        sidecar.istio.io/inject: "false"
+    spec:
+      containers:
+        - name: update-gh-status-in-progress
+          image: "{{.Values.image.account}}.dkr.ecr.{{.Values.image.repoRegion}}.amazonaws.com/{{.Values.image.repoName}}:{{.Values.image.tag}}"  # yamllint disable-line rule:line-length
+          env:
+            - name: GITHUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: argocd-external-secret-github
+                  key: github-token
+            - name: AWS_DEFAULT_REGION
+              value: {{.Values.image.repoRegion}}
+          args: [ "status", "--repo", "{{.Values.app.repoName}}", "--ref", "{{.Values.app.tag}}", "--state", "in_progress", "--environment", "{{.Values.env}}"{{- if regexMatch "^v[0-9]+(\\.[0-9]+){0,2}$" .Values.app.tag}}, "--sha-ecr", "True", "--log-url", "{{.Values.app.prodArgocdLogURL}}"{{- else}}, "--log-url", "{{.Values.app.stagingArgocdLogURL}}"{{- end}}]
+      restartPolicy: Never
+  backoffLimit: 0
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  namespace: {{.Values.namespace}}
+  generateName: {{.Values.app.name}}-gh-status-in-success-
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+    argocd.argoproj.io/sync-wave: "3"
+spec:
+  template:
+    metadata:
+      labels:
+        sidecar.istio.io/inject: "false"
+    spec:
+      containers:
+        - name: update-gh-status-success
+          image: "{{.Values.image.account}}.dkr.ecr.{{.Values.image.repoRegion}}.amazonaws.com/{{.Values.image.repoName}}:{{.Values.image.tag}}"  # yamllint disable-line rule:line-length
+          env:
+            - name: GITHUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: argocd-external-secret-github
+                  key: github-token
+            - name: AWS_DEFAULT_REGION
+              value: {{.Values.image.repoRegion}}
+          args: [ "status", "--repo", "{{.Values.app.repoName}}", "--state", "success", "--ref", "{{.Values.app.tag}}", "--environment", "{{.Values.env}}"{{- if regexMatch "^v[0-9]+(\\.[0-9]+){0,2}$" .Values.app.tag}}, "--sha-ecr", "True", "--log-url", "{{.Values.app.prodArgocdLogURL}}", "--environment-url", "{{.Values.app.prodArgocdLogURL}}"{{- else}}, "--log-url", "https://argocd.staging.tatari.dev/applications/staging-fe", "--environment-url", "{{.Values.app.stagingArgocdLogURL}}"{{- end}}]
+      restartPolicy: Never
+  backoffLimit: 0
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  namespace: {{.Values.namespace}}
+  generateName: {{.Values.app.name}}-gh-status-in-cleanup
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+    argocd.argoproj.io/sync-wave: "4"
+spec:
+  template:
+    metadata:
+      labels:
+        sidecar.istio.io/inject: "false"
+    spec:
+      containers:
+        - name: update-gh-cleanup
+          image: "{{.Values.image.account}}.dkr.ecr.{{.Values.image.repoRegion}}.amazonaws.com/{{.Values.image.repoName}}:{{.Values.image.tag}}"  # yamllint disable-line rule:line-length
+          env:
+            - name: GITHUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: argocd-external-secret-github
+                  key: github-token
+            - name: AWS_DEFAULT_REGION
+              value: {{.Values.image.repoRegion}}
+          args: [ "cleanup", "--repo", "{{.Values.app.repoName}}", "--ref", "{{.Values.image.tag}}", "--environment", "{{.Values.env}}"{{- if regexMatch "^v[0-9]+(\\.[0-9]+){0,2}$" .Values.app.tag}}, "--sha-ecr", "True"{{- else}}{{- end}}]
+      restartPolicy: Never
+  backoffLimit: 0
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  namespace: {{.Values.namespace}}
+  generateName: {{.Values.app.name}}-gh-status-in-fail-
+  annotations:
+    argocd.argoproj.io/hook: SyncFail
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  template:
+    metadata:
+      labels:
+        sidecar.istio.io/inject: "false"
+    spec:
+      containers:
+        - name: update-gh-status-fail
+          image: "{{.Values.image.account}}.dkr.ecr.{{.Values.image.repoRegion}}.amazonaws.com/{{.Values.image.repoName}}:{{.Values.image.tag}}"  # yamllint disable-line rule:line-length
+          env:
+            - name: GITHUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: argocd-external-secret-github
+                  key: github-token
+            - name: AWS_DEFAULT_REGION
+              value: {{.Values.image.repoRegion}}
+          args: [ "status", "--repo", "{{.Values.app.repoName}}", "--state", "failure", "--ref", "{{.Values.app.tag}}", "--environment", "{{.Values.env}}"{{- if regexMatch "^v[0-9]+(\\.[0-9]+){0,2}$" .Values.app.tag}}, "--sha-ecr", "True", "--log-url", "{{.Values.app.prodArgocdLogURL}}"{{- else}}, "--log-url", "{{.Values.app.stagingArgocdLogURL}}"{{- end}}]
+      restartPolicy: Never
+  backoffLimit: 0

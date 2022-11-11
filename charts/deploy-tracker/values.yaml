@@ -1,0 +1,15 @@
+env: local
+namespace: argocd
+
+image:
+  account: "878256633362"
+  repoName: "deploy-tracker"
+  repoRegion: us-west-2
+  tag: "v0.26.0"
+
+app:
+  name: default
+  repoName: default
+  tag: default
+  prodArgocdLogURL: https://argocd.tatari.dev/applications/default
+  stagingArgocdLogURL: https://argocd.tatari.dev/applications/default
