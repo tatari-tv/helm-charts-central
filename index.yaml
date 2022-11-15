@@ -3,7 +3,21 @@ entries:
   deploy-tracker:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-11T17:44:02.700126645Z"
+    created: "2022-11-15T15:20:49.772237Z"
+    description: A Helm chart that creates the resources needed to track code deployments
+      in Github Deployment API
+    digest: e359a5b7e139930e71df2f029c83421aa5a1319df6df9d2b7d704864842b101e
+    keywords:
+    - deploy-tracker
+    - github-deployments
+    name: deploy-tracker
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/tatari-tv/helm-charts-central/gh-pages/deploy-tracker-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-11-15T15:20:49.771969198Z"
     description: A Helm chart that creates the resources needed to track code deployments
       in Github Deployment API
     digest: 5568844d81939c40e570135b13cd11b5468f76248ceb66d09e216ff692068c70
@@ -15,4 +29,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/tatari-tv/helm-charts-central/gh-pages/deploy-tracker-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-11T17:44:02.699596606Z"
+generated: "2022-11-15T15:20:49.771433495Z"
