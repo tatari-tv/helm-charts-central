@@ -1,7 +1,7 @@
 env: local
 namespace: argocd
 
-image:
+deployTrackerImage:
   account: "878256633362"
   repoName: "deploy-tracker"
   repoRegion: us-west-2

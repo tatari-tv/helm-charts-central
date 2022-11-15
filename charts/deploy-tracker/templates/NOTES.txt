@@ -1,1 +1,0 @@
-1. Created Argocd Resources Hooks for {{.Values.app.name}}
