@@ -1,0 +1,25 @@
+{{ if .Values.enabled }}
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: gha-runner-{{ .Values.serviceSuffix }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "gha-runner-deployment.labels" . | nindent 4}}
+spec:
+  replicas: 1
+  template:
+    spec:
+      containerMode: kubernetes
+      dockerdWithinRunnerContainer: false
+      dockerEnabled: false
+      repository: {{ .Values.runnerDeploymentSpec.githubRepository }}
+      serviceAccountName: {{ .Values.runnerDeploymentSpec.serviceAccountName }}
+      workVolumeClaimTemplate:
+        storageClassName: gp3
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 15Gi
+{{- end }}
