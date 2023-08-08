@@ -1,0 +1,11 @@
+apiVersion: v2
+name: gha-runner-deployment
+description: A Helm chart for Github Action Runner Deployments
+type: library
+version: 0.1.0
+appVersion: "0.1.0"
+keywords:
+  - Github Action Runner Deployment
+maintainers:
+  - name: Tatari
+    email: sre@tatari.tv

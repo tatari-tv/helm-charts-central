@@ -1,0 +1,12 @@
+# Default values for gha-runner-deployment.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+enabled: true
+
+namespace: default
+serviceSuffix: ""
+
+runnerDeploymentSpec:
+  githubRepository: ""
+  serviceAccountName: ""
+  # all the other settings
