@@ -3,7 +3,7 @@ entries:
   deploy-tracker:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2023-08-08T15:36:45.693288767Z"
+    created: "2023-08-14T17:43:12.082147645Z"
     description: A Helm chart that creates the resources needed to track code deployments
       in Github Deployment API
     digest: 6deec1424982de1597a372c0f0c5698330369e1fe960008c6a4b05057f0f4b49
@@ -17,7 +17,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2023-08-08T15:36:45.693068463Z"
+    created: "2023-08-14T17:43:12.081724241Z"
     description: A Helm chart that creates the resources needed to track code deployments
       in Github Deployment API
     digest: e359a5b7e139930e71df2f029c83421aa5a1319df6df9d2b7d704864842b101e
@@ -31,7 +31,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2023-08-08T15:36:45.692820558Z"
+    created: "2023-08-14T17:43:12.080472128Z"
     description: A Helm chart that creates the resources needed to track code deployments
       in Github Deployment API
     digest: 5568844d81939c40e570135b13cd11b5468f76248ceb66d09e216ff692068c70
@@ -46,17 +46,17 @@ entries:
   gha-runner-deployment:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2023-08-08T15:36:45.693559872Z"
+    created: "2023-08-14T17:43:12.083069654Z"
     description: A Helm chart for Github Action Runner Deployments
-    digest: 968abe6df2f7d286395b0c0c7d2ac4102b477b9b7423b98ffb47e1d724873b17
+    digest: 69d86eacc84baff4e6bb527eb34f853c1cb435a8ab1a50b9d771db8aba43959a
     keywords:
     - Github Action Runner Deployment
     maintainers:
     - email: sre@tatari.tv
       name: Tatari
     name: gha-runner-deployment
-    type: library
+    type: application
     urls:
     - https://raw.githubusercontent.com/tatari-tv/helm-charts-central/gh-pages/gha-runner-deployment-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-08T15:36:45.692155745Z"
+generated: "2023-08-14T17:43:12.079820522Z"
