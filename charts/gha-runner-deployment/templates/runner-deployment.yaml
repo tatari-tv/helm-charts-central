@@ -8,8 +8,10 @@ metadata:
 spec:
   replicas: {{ .Values.replicaCount }}
   template:
+    {{- with .Values.runnerDeployment.metadata }}
     metadata:
-      {{- .Values.runnerDeployment.metadata | toYaml | nindent 6 }}
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
     {{- with .Values.runnerDeployment.spec }}
     spec:
         {{- toYaml . | nindent 6 }}
