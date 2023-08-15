@@ -2,10 +2,25 @@ apiVersion: v1
 entries:
   gha-runner-deployment:
   - apiVersion: v2
-    appVersion: 0.2.1
-    created: "2023-08-15T21:53:31.518612277Z"
+    appVersion: 0.2.2
+    created: "2023-08-15T22:04:03.196493626Z"
     description: A Helm chart for Github Action Runner Deployments
-    digest: f234acae88d94e471e6765065b8213aec2d15b66aabd926d13cbd106c850c18a
+    digest: 2fbadc7407d174edb712f482f9ee7a23cc554b4493e8083ae2fae736fba92b3c
+    keywords:
+    - Github Action Runner Deployment
+    maintainers:
+    - email: sre@tatari.tv
+      name: Tatari
+    name: gha-runner-deployment
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/tatari-tv/helm-charts-central/gh-pages/gha-runner-deployment-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 0.2.1
+    created: "2023-08-15T22:04:03.19602232Z"
+    description: A Helm chart for Github Action Runner Deployments
+    digest: bb721daf39f21a6123d3d6ae8ab74b83a6c36df4f9ac5118162737d131a36994
     keywords:
     - Github Action Runner Deployment
     maintainers:
@@ -18,7 +33,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2023-08-15T21:53:31.517518445Z"
+    created: "2023-08-15T22:04:03.195565115Z"
     description: A Helm chart for Github Action Runner Deployments
     digest: e24d5730b5fc164249c1b50a07241440965849052fb661b14ef17eea04afceb0
     keywords:
@@ -33,7 +48,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2023-08-15T21:53:31.516908728Z"
+    created: "2023-08-15T22:04:03.195086709Z"
     description: A Helm chart for Github Action Runner Deployments
     digest: 968abe6df2f7d286395b0c0c7d2ac4102b477b9b7423b98ffb47e1d724873b17
     keywords:
@@ -46,4 +61,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/tatari-tv/helm-charts-central/gh-pages/gha-runner-deployment-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-15T21:53:31.516236009Z"
+generated: "2023-08-15T22:04:03.194628604Z"
