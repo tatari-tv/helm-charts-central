@@ -7,7 +7,6 @@ metadata:
     {{- include "gha-runner-deployment.labels" . | nindent 4}}
 spec:
   replicas: {{ .Values.replicaCount }}
-  serviceAccountName: {{ .Values.serviceAccount.name }}
   template:
     {{- with .Values.runnerDeployment.metadata }}
     metadata:
