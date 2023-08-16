@@ -2,8 +2,8 @@ apiVersion: v2
 name: gha-runner-deployment
 description: A Helm chart for Github Action Runner Deployments
 type: application
-version: 0.2.3
-appVersion: "0.2.3"
+version: 0.2.4
+appVersion: "0.2.4"
 keywords:
   - Github Action Runner Deployment
 maintainers:
