@@ -7,7 +7,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: {{include "gha-runner-deployment.fullname" .}}-gha-runner
+  name: {{include "gha-runner-deployment.fullname" .}}
 subjects:
   - kind: ServiceAccount
     name: {{ .Values.serviceAccount.name }}
