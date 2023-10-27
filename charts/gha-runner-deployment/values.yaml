@@ -86,7 +86,9 @@ tolerations: []
 affinity: {}
 
 runnerDeployment:
-  metadata: {}
+  metadata:
+    labels:
+      cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
   #   pass labels, annotations, name, and annotations
   #   annotations:
   #     kubectl.kubernetes.io/default-logs-container: "runner"
