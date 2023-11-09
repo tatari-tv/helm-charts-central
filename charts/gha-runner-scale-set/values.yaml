@@ -1,0 +1,24 @@
+# Default values for gha-runner-scale-set.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# whether to create an init container that verifies the application is running a specific version
+checkVersion:
+  enabled: false
+  image:
+    repository: busybox
+    pullPolicy: IfNotPresent
+    tag: ""
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: "default-gha-runner-scale-set"
+
+applicationServiceAccount:
+  name: "default"

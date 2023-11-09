@@ -1,0 +1,11 @@
+apiVersion: v2
+name: gha-runner-scale-Set
+description: A Helm chart for Github Actions Runner Scale Set
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+keywords:
+  - Github Actions Runner Scale Set
+maintainers:
+  - name: Tatari
+    email: sre@tatari.tv
