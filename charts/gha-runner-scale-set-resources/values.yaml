@@ -28,3 +28,6 @@ externalSecret:
   storeName: "external-secret-store"
   storeKind: "ClusterSecretStore"
   key: "key"
+
+# set to true if you're not already setting PERMISSIVE mtls policy for Istio in the application namespace
+setIstioPeerAuthentication: false
