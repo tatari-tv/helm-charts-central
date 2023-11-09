@@ -22,3 +22,9 @@ serviceAccount:
 
 applicationServiceAccount:
   name: "default"
+
+# The external secret to grab GitHub secrets from
+externalSecret:
+  storeName: "external-secret-store"
+  storeKind: "ClusterSecretStore"
+  key: "key"
