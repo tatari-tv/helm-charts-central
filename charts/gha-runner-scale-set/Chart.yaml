@@ -1,6 +1,6 @@
 apiVersion: v2
-name: gha-runner-scale-Set
-description: A Helm chart for Github Actions Runner Scale Set
+name: gha-runner-scale-set
+description: A Helm chart for extra Github Actions Runner Scale Set resources
 type: application
 version: 0.1.0
 appVersion: "0.1.0"

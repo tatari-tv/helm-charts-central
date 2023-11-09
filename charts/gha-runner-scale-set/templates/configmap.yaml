@@ -17,7 +17,6 @@ data:
         app: {{ include "gha-runner-scale-set.fullname" . }}-gha
         app.kubernetes.io/part-of: gha-runner-scale-set
         sidecar.istio.io/inject: "false"
-        {{- include "gha-runner-scale-set.tatariLabels" . | nindent 8}}
     spec:
       {{- if (.Values.checkVersion.enabled) }}
       initContainers:
