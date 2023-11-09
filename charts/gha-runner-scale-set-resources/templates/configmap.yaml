@@ -11,10 +11,10 @@ data:
     apiVersion: v1
     kind: PodTemplate
     metadata:
-      name: {{ include "gha-runner-scale-set.fullname" . }}-gha
+      name: {{ include "gha-runner-scale-set.fullname" . }}
       namespace: {{ include "gha-runner-scale-set.namespace" . }}
       labels:
-        app: {{ include "gha-runner-scale-set.fullname" . }}-gha
+        app: {{ include "gha-runner-scale-set.fullname" . }}
         app.kubernetes.io/part-of: gha-runner-scale-set
         sidecar.istio.io/inject: "false"
     spec:

@@ -2,7 +2,7 @@
 kind: PeerAuthentication
 apiVersion: security.istio.io/v1beta1
 metadata:
-  name: {{ include "gha-runner-scale-set.fullname" . }}-gha
+  name: {{ include "gha-runner-scale-set.fullname" . }}
   namespace: {{ include "gha-runner-scale-set.namespace" . }}
   labels:
     {{- include "gha-runner-scale-set.labels" . | nindent 4 }}
