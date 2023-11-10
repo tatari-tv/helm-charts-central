@@ -2,17 +2,6 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# whether to create an init container that verifies the application is running a specific version
-checkVersion:
-  enabled: false
-  image:
-    repository: busybox
-    pullPolicy: IfNotPresent
-    tag: ""
-# these values are passed to the init container
-  service: ""
-  version: ""
-
 nameOverride: ""
 fullnameOverride: ""
 namespaceOverride: ""
