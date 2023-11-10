@@ -1,0 +1,28 @@
+# Default values for gha-runner-scale-set.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+nameOverride: ""
+fullnameOverride: ""
+namespaceOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: "gha-runner-scale-set"
+
+applicationServiceAccount:
+  name: "default"
+
+# The external secret to grab GitHub secrets from
+# targetSecret should match what's set on the official GHA Runner Scale Set chart's githubConfigSecret value
+externalSecret:
+  storeName: "external-secret-store"
+  storeKind: "ClusterSecretStore"
+  key: "key"
+  targetSecret: "gha-runners"
+
+# set to true if you're not already setting PERMISSIVE mtls policy for Istio in the application namespace
+setIstioPeerAuthentication: false
