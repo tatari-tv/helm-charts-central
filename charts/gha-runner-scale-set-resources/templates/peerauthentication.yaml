@@ -10,6 +10,6 @@ spec:
   mtls:
     mode: PERMISSIVE
   selector:
-    labels:
+    matchLabels:
       app.kubernetes.io/part-of: gha-runner-scale-set
 {{- end}}
