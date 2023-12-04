@@ -19,15 +19,14 @@ stores: {}
 #   secrets:
 #     - sourcePath: "my-service/test-secret"
 #       sourceKey: "nunya"
-#       destName: "test-secret"
-#       destKey: "nun-ya"
+#     - sourcePath: "my-service/another-test-secret"
+#       sourceKey: "nunya"
+#       destKey: "nunya2"
 # vault-service-shared:
 #   type: "vault"
 #   server: "http://cool.vault.path:port"
 #   path: "service-shared"
+#   refreshInterval: "12h"
 #   secrets:
 #     - sourcePath: "shared-secret"
 #       sourceKey: "everyoneknows"
-#       destName: "letthemeat"
-#       destKey: "cake"
-#       refreshInterval: "12h"

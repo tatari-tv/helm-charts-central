@@ -54,8 +54,9 @@ secretstores:
       secrets:
         - sourcePath: "test/my-service/test-secret"
           sourceKey: "nunya"
-          destName: "test-secret-aws"
-          destKey: "nun-ya"
+        - sourcePath: "test/my-service/another-test-secret"
+          sourceKey: "nunya"
+          destKey: "nunya2"
     # Vault example for service/ mount
     vault-service:
       type: "vault"
@@ -64,8 +65,6 @@ secretstores:
       secrets:
         - sourcePath: "my-service/test-secret"
           sourceKey: "nunya"
-          destName: "test-secret-vault-service"
-          destKey: "nun-ya"
     # Vault example for service-shared/ mount
     vault-service-shared:
       type: "vault"
@@ -74,8 +73,6 @@ secretstores:
       secrets:
         - sourcePath: "shared-secret"
           sourceKey: "everyoneknows"
-          destName: "letthemeat"
-          destKey: "cake"
 ```
 
 The final option is to include `additionalSecretsPaths` in the store
@@ -115,7 +112,7 @@ secretstores:
 * For `vault` type stores, the default is to only pull from one location in the
 mount:
    * `[service-name]`
-* `secretstores.stores.[store].secrets.destName` must be unique across all
-stores and secrets in the namespace.
+* `secretstores.stores.[store].secrets.destKey` is optional, and only required
+if there are other key collisions between source secrets.
 * `secretstores.stores.[store].refreshInterval` can be optionally specified,
 however it is defaulted to 1 hour.
