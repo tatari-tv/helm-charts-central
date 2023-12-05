@@ -1,0 +1,11 @@
+apiVersion: v2
+name: secretstores
+description: A Helm chart to create namespaced ExternalSecrets SecretStores
+type: application
+version: 0.0.1
+appVersion: "0.0.1"
+keywords:
+  - External Secrets Namespaced Store
+maintainers:
+  - name: Tatari
+    email: sre@tatari.tv

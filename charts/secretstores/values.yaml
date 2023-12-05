@@ -1,0 +1,32 @@
+namespace: {}
+serviceName: {}
+
+stores: {}
+# stores contains a dictionary of store objects, which can include secrets
+# For more information, see README.md
+# Example:
+# aws:
+#   type: "aws"
+#   iamRole: "arn:aws:iam::XXXXXXXXXXXX:role/my-service-role"
+#   refreshInterval: "2h"
+#   region: "us-west-2"
+#   additionalSecretsPaths:
+#     - "test/sibling-service/another-secret"
+# vault-service:
+#   type: "vault"
+#   server: "http://cool.vault.path:port"
+#   path: "service"
+#   secrets:
+#     - sourcePath: "my-service/test-secret"
+#       sourceKey: "nunya"
+#     - sourcePath: "my-service/another-test-secret"
+#       sourceKey: "nunya"
+#       destKey: "nunya2"
+# vault-service-shared:
+#   type: "vault"
+#   server: "http://cool.vault.path:port"
+#   path: "service-shared"
+#   refreshInterval: "12h"
+#   secrets:
+#     - sourcePath: "shared-secret"
+#       sourceKey: "everyoneknows"
