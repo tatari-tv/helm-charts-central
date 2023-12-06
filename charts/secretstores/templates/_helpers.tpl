@@ -2,7 +2,7 @@
 Expand the name of the chart.
 */}}
 {{- define "secretstores.name" -}}
-{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
+{{- default .Chart.Name .Values.global.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
@@ -11,10 +11,10 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 If release name contains chart name it will be used as a full name.
 */}}
 {{- define "secretstores.fullname" -}}
-{{- if .Values.fullnameOverride }}
-{{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
+{{- if .Values.global.fullnameOverride }}
+{{- .Values.global.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
-{{- $name := default $.Chart.Name .Values.nameOverride }}
+{{- $name := default .Chart.Name .Values.global.nameOverride }}
 {{- if contains $name .Release.Name }}
 {{- .Release.Name | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -59,22 +59,11 @@ tags.tatari.tv/env: {{ .Values.global.env | quote }}
 {{- end }}
 
 {{/*
-Create the name of the service account to use
-*/}}
-{{- define "secretstores.serviceAccountName" -}}
-{{- if .Values.serviceAccount.create }}
-{{- default (include "secretstores.fullname" .) .Values.serviceAccount.name }}
-{{- else }}
-{{- default "default" .Values.serviceAccount.name }}
-{{- end }}
-{{- end }}
-
-{{/*
 Set namespace by fullname or the environment values override
 */}}
 {{- define "secretstores.namespace" -}}
-{{- if .Values.namespace }}
-{{- .Values.namespace }}
+{{- if .Values.global.namespaceOverride }}
+{{- .Values.global.namespaceOverride }}
 {{- else }}
 {{- (include "secretstores.fullname" .) }}
 {{- end }}
