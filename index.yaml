@@ -3,9 +3,9 @@ entries:
   gha-runner-deployment:
   - apiVersion: v2
     appVersion: 0.3.1
-    created: "2023-12-12T15:10:50.046021444Z"
+    created: "2023-12-12T16:40:03.955560857Z"
     description: A Helm chart for Github Action Runner Deployments
-    digest: e2ec3abe6630a4694ddb95ef0111671a040a8003471f03b2a74d14d9a9167ea6
+    digest: 4040d4341ce0576ac93dd3ac01808561493b7bfaa4ebdee077a79d69fa714e58
     keywords:
     - Github Action Runner Deployment
     maintainers:
@@ -18,7 +18,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: 0.3.0
-    created: "2023-12-12T15:10:50.045672599Z"
+    created: "2023-12-12T16:40:03.955025422Z"
     description: A Helm chart for Github Action Runner Deployments
     digest: 36b28390e344dab00ed75fff5a4348a8a0727216d64489ef78fad1d6022b4041
     keywords:
@@ -33,7 +33,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 0.2.5
-    created: "2023-12-12T15:10:50.045132405Z"
+    created: "2023-12-12T16:40:03.95469565Z"
     description: A Helm chart for Github Action Runner Deployments
     digest: 5372e5c111f27ddab6c25f46eb65a0639a87b97c19527f26858804a01a9ee205
     keywords:
@@ -48,7 +48,7 @@ entries:
     version: 0.2.5
   - apiVersion: v2
     appVersion: 0.2.4
-    created: "2023-12-12T15:10:50.044761228Z"
+    created: "2023-12-12T16:40:03.954375806Z"
     description: A Helm chart for Github Action Runner Deployments
     digest: 813fc373054e021676f6e8e602ffba62d38a33fdd56245f35f9d60c03249cc41
     keywords:
@@ -63,7 +63,7 @@ entries:
     version: 0.2.4
   - apiVersion: v2
     appVersion: 0.2.3
-    created: "2023-12-12T15:10:50.044435336Z"
+    created: "2023-12-12T16:40:03.954052646Z"
     description: A Helm chart for Github Action Runner Deployments
     digest: 797e634f2ecaf44cbd42cadae582c5d5cd15804e8d483a029db7aad0545ce032
     keywords:
@@ -78,7 +78,7 @@ entries:
     version: 0.2.3
   - apiVersion: v2
     appVersion: 0.2.2
-    created: "2023-12-12T15:10:50.044113652Z"
+    created: "2023-12-12T16:40:03.953709779Z"
     description: A Helm chart for Github Action Runner Deployments
     digest: 2fbadc7407d174edb712f482f9ee7a23cc554b4493e8083ae2fae736fba92b3c
     keywords:
@@ -93,7 +93,7 @@ entries:
     version: 0.2.2
   - apiVersion: v2
     appVersion: 0.2.1
-    created: "2023-12-12T15:10:50.043789904Z"
+    created: "2023-12-12T16:40:03.953370008Z"
     description: A Helm chart for Github Action Runner Deployments
     digest: bb721daf39f21a6123d3d6ae8ab74b83a6c36df4f9ac5118162737d131a36994
     keywords:
@@ -108,7 +108,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2023-12-12T15:10:50.043440027Z"
+    created: "2023-12-12T16:40:03.953024917Z"
     description: A Helm chart for Github Action Runner Deployments
     digest: e24d5730b5fc164249c1b50a07241440965849052fb661b14ef17eea04afceb0
     keywords:
@@ -123,7 +123,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2023-12-12T15:10:50.043070282Z"
+    created: "2023-12-12T16:40:03.952649199Z"
     description: A Helm chart for Github Action Runner Deployments
     digest: 968abe6df2f7d286395b0c0c7d2ac4102b477b9b7423b98ffb47e1d724873b17
     keywords:
@@ -139,9 +139,9 @@ entries:
   gha-runner-scale-set-resources:
   - apiVersion: v2
     appVersion: 0.1.1
-    created: "2023-12-12T15:10:50.046523387Z"
+    created: "2023-12-12T16:40:03.956688321Z"
     description: A Helm chart for extra Github Actions Runner Scale Set resources
-    digest: 6c78f3907704333fef93a0616cc861fa078c455312faad5c9d3968c0570c7f1f
+    digest: b1a1491b72fa841405da7410a0782ef3b5eed397718d5356117895c604595539
     keywords:
     - Github Actions Runner Scale Set
     maintainers:
@@ -154,7 +154,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2023-12-12T15:10:50.046304927Z"
+    created: "2023-12-12T16:40:03.956239768Z"
     description: A Helm chart for extra Github Actions Runner Scale Set resources
     digest: 087cce98b2e0271ba28dd2b1a14c08eeb4f8dbfb22c9b730c4e89701fbc602ce
     keywords:
@@ -169,8 +169,23 @@ entries:
     version: 0.1.0
   secretstores:
   - apiVersion: v2
+    appVersion: 0.0.4
+    created: "2023-12-12T16:40:03.957806459Z"
+    description: A Helm chart to create namespaced ExternalSecrets SecretStores
+    digest: 8fde01864159fd2f2ba06a6eba1c9376b0b38dfe6eed29d5275d0525ecdc21bc
+    keywords:
+    - External Secrets Namespaced Store
+    maintainers:
+    - email: sre@tatari.tv
+      name: Tatari
+    name: secretstores
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/tatari-tv/helm-charts-central/gh-pages/secretstores-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     appVersion: 0.0.3
-    created: "2023-12-12T15:10:50.047132261Z"
+    created: "2023-12-12T16:40:03.957553099Z"
     description: A Helm chart to create namespaced ExternalSecrets SecretStores
     digest: e2fa3cc31b61606760b90acba55ddbe1c35857115d0ffcbc1d0b410240b3940a
     keywords:
@@ -185,7 +200,7 @@ entries:
     version: 0.0.3
   - apiVersion: v2
     appVersion: 0.0.2
-    created: "2023-12-12T15:10:50.046927205Z"
+    created: "2023-12-12T16:40:03.957312111Z"
     description: A Helm chart to create namespaced ExternalSecrets SecretStores
     digest: 13893e8791d15c362178b30e84347a9ea1eb57394109fd0cb674274779f49ecb
     keywords:
@@ -200,7 +215,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2023-12-12T15:10:50.046725597Z"
+    created: "2023-12-12T16:40:03.957087474Z"
     description: A Helm chart to create namespaced ExternalSecrets SecretStores
     digest: dcf4bb90a9a994b02660a9cc5e6ded28ba1c3701391c02e82c27596213867666
     keywords:
@@ -213,4 +228,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/tatari-tv/helm-charts-central/gh-pages/secretstores-0.0.1.tgz
     version: 0.0.1
-generated: "2023-12-12T15:10:50.042716568Z"
+generated: "2023-12-12T16:40:03.952297956Z"
