@@ -2,8 +2,8 @@ apiVersion: v2
 name: secretstores
 description: A Helm chart to create namespaced ExternalSecrets SecretStores
 type: application
-version: 0.0.3
-appVersion: "0.0.3"
+version: 0.0.4
+appVersion: "0.0.4"
 keywords:
   - External Secrets Namespaced Store
 maintainers:
